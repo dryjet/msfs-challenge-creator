@@ -29,6 +29,7 @@ namespace LandingChallengeCreator
         {
             //+001265.00
             var dec = decimal.Parse(this.Altitude
+                .Replace("ft", "")
                 .Replace("+", "")
                 .Replace(".00", ""));
             var altitude = string.Format("{0:000000.00}", dec);
@@ -49,9 +50,9 @@ namespace LandingChallengeCreator
                 ["Mission.Latitude"] = this.Latitude,
                 ["Mission.Longitude"] = this.Longitude,
                 ["Mission.Altitude"] = altStr,
-                ["Mission.Heading"] = this.Heading,
-                ["Mission.Airspeed"] = this.Airspeed,
-                ["Mission.Flaps"] = this.Flaps,
+                ["Mission.Heading"] = this.Heading.Replace("°", ""),
+                ["Mission.Airspeed"] = this.Airspeed.Replace("kts", ""),
+                ["Mission.Flaps"] = this.Flaps.Replace("%", ""),
             };
 
 
