@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="WeatherPreset" version="1,3">
+    <Descr>AceXML Document</Descr>
+    <WeatherPreset.Preset>
+        <Name>TT:MENU.WEATHERTYPE_9CLEAR_SKY</Name>
+		<LayeredImage>weather/Presets/clear_sky_layer.png</LayeredImage>
+		<Icon>weather/Presets/clear_sky.svg</Icon>
+        <AerosolDensity Value="3.000" Unit="density factor"></AerosolDensity>
+        <Precipitations Value="15.000" Unit="mm/h"></Precipitations>
+        <CloudLayer>
+            <CloudLayerDensity Value="0.000" Unit="(0 - 1)"></CloudLayerDensity>
+            <CloudLayerAltitudeBot Value="2500.000" Unit="m"></CloudLayerAltitudeBot>
+            <CloudLayerAltitudeTop Value="3500.000" Unit="m"></CloudLayerAltitudeTop>
+			<CloudLayerScattering Value="0.000" Unit="(0 - 1)"></CloudLayerScattering>				
+        </CloudLayer>
+        <CloudLayer>
+            <CloudLayerDensity Value="0.000" Unit="(0 - 1)"></CloudLayerDensity>
+            <CloudLayerAltitudeBot Value="5000.000" Unit="m"></CloudLayerAltitudeBot>
+            <CloudLayerAltitudeTop Value="6000.000" Unit="m"></CloudLayerAltitudeTop>
+			<CloudLayerScattering Value="0.000" Unit="(0 - 1)"></CloudLayerScattering>		
+        </CloudLayer>
+        <CloudLayer>
+            <CloudLayerDensity Value="0.000" Unit="(0 - 1)"></CloudLayerDensity>
+            <CloudLayerAltitudeBot Value="15000.000" Unit="m"></CloudLayerAltitudeBot>
+            <CloudLayerAltitudeTop Value="16000.000" Unit="m"></CloudLayerAltitudeTop>
+        </CloudLayer>
+		<WindLayer>
+            <WindLayerAltitude Value="25" Unit="m"></WindLayerAltitude>
+            <WindLayerAngle Value="${dir}" Unit="degrees"></WindLayerAngle>
+            <WindLayerSpeed Value="${speed}" Unit="knts"></WindLayerSpeed>
+    </WindLayer>
+    </WeatherPreset.Preset>
+</SimBase.Document>
