@@ -37,8 +37,8 @@ namespace LandingChallengeCreator
                     RunwayNumber ="05",
                     RunwayDesignator = "R",
                     Heading = "053",
-                    Latitude = "N51° 11' 29.48\"",
-                    Longitude= "E06° 34' 04.52\""
+                    Latitude = "N051° 11' 29.48\"",
+                    Longitude= "E006° 34' 04.52\""
                 },
                 new Mission()
                 {
@@ -48,8 +48,8 @@ namespace LandingChallengeCreator
                     RunwayDesignator = "L",
                     Altitude = "+05000.00",
                     Heading = "080",
-                    Latitude = "N48° 20' 29.48\"",
-                    Longitude= "E11° 29' 47.18\""
+                    Latitude = "N048° 20' 29.48\"",
+                    Longitude= "E011° 29' 47.18\""
                 },
                 new Mission()
                 {
@@ -59,8 +59,8 @@ namespace LandingChallengeCreator
                     RunwayDesignator = "R",
                     Altitude = "+05000.00",
                     Heading = "080",
-                    Latitude = "N48° 19' 10.32\"",
-                    Longitude= "E11° 28' 53.40\""
+                    Latitude = "N048° 19' 10.32\"",
+                    Longitude= "E011° 28' 53.40\""
                 },
                 new Mission()
                 {
@@ -70,8 +70,8 @@ namespace LandingChallengeCreator
                     RunwayDesignator = "",
                     Altitude = "+02200.00",
                     Heading = "066",
-                    Latitude = "N54° 57' 56.13\"",
-                    Longitude= "W01° 57' 38.17\""
+                    Latitude = "N054° 57' 56.13\"",
+                    Longitude= "W001° 57' 38.17\""
                 }
             };
         }

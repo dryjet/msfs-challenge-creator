@@ -65,6 +65,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setPackageFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numWindFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWindKnots)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,6 +74,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -154,7 +157,7 @@
             // txtLatitude
             // 
             this.txtLatitude.Location = new System.Drawing.Point(30, 49);
-            this.txtLatitude.Mask = "L00\\° 00\\\' 00\\.00\"";
+            this.txtLatitude.Mask = "L000\\° 00\\\' 00\\.00\"";
             this.txtLatitude.Name = "txtLatitude";
             this.txtLatitude.Size = new System.Drawing.Size(100, 20);
             this.txtLatitude.TabIndex = 9;
@@ -163,7 +166,7 @@
             // txtLongitude
             // 
             this.txtLongitude.Location = new System.Drawing.Point(152, 49);
-            this.txtLongitude.Mask = "L00\\° 00\\\' 00\\.00\"";
+            this.txtLongitude.Mask = "L000\\° 00\\\' 00\\.00\"";
             this.txtLongitude.Name = "txtLongitude";
             this.txtLongitude.Size = new System.Drawing.Size(100, 20);
             this.txtLongitude.TabIndex = 10;
@@ -446,11 +449,28 @@
             this.setPackageFolderToolStripMenuItem.Text = "Set Package Folder";
             this.setPackageFolderToolStripMenuItem.Click += new System.EventHandler(this.setPackageFolderToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 470);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(744, 22);
+            this.statusStrip1.TabIndex = 18;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 468);
+            this.ClientSize = new System.Drawing.Size(744, 492);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnNewApproach);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnSave);
@@ -475,6 +495,8 @@
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,6 +541,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem setPackageFolderToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

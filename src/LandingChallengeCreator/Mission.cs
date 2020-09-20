@@ -11,8 +11,8 @@ namespace LandingChallengeCreator
         public string RunwayNumber { get; set; } = "11";
         public string RunwayDesignator { get; set; } = "L";
         public DateTime DateOfFlight { get; set; } = new DateTime(2018, 1, 1).AddDays(232).AddHours(14);
-        public string Latitude { get; set; } = "N00° 00' 00.00\"";
-        public string Longitude { get; set; } = "E00° 00' 00.00\"";
+        public string Latitude { get; set; } = "N000° 00' 00.00\"";
+        public string Longitude { get; set; } = "E000° 00' 00.00\"";
         public string Altitude { get; set; } = "+05000.00";
         public string Heading { get; set; } = "111";
         public string Airspeed { get; set; } = "145";

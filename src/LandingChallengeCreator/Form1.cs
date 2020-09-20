@@ -61,6 +61,7 @@ namespace LandingChallengeCreator
             // Set the selected index
             this.listBox1.SelectedIndex = Math.Min(Properties.Settings.Default.SelectedApproach, this.listBox1.Items.Count - 1);
             this.IsInitialized = true;
+            this.toolStripStatusLabel1.Visible = false;
         }
 
         private void btnDeploy_Click(object sender, EventArgs e)
@@ -75,12 +76,18 @@ namespace LandingChallengeCreator
                 weather = weather.Replace("${dir}", this.numWindFrom.Value.ToString());
                 weather = weather.Replace("${speed}", this.numWindKnots.Value.ToString());
                 File.WriteAllText(this.WeatherFilename, weather, Encoding.GetEncoding(1252));
+
+                this.toolStripStatusLabel1.Visible = true;
+                this.toolStripStatusLabel1.Text = $"The approach {mission.Approach} was deployed!";
             }
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            this.toolStripStatusLabel1.Visible = true;
+            this.toolStripStatusLabel1.Text = "Approaches successfully saved!";
+
             Properties.Settings.Default.SelectedApproach = this.listBox1.SelectedIndex;
             Properties.Settings.Default.Approaches = JsonConvert.SerializeObject(this.Missions);
             Properties.Settings.Default.Save();
@@ -88,6 +95,8 @@ namespace LandingChallengeCreator
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.toolStripStatusLabel1.Visible = false;
+
             Properties.Settings.Default.SelectedApproach = this.listBox1.SelectedIndex;
             Properties.Settings.Default.Save();
 
@@ -114,6 +123,7 @@ namespace LandingChallengeCreator
 
         private void btnNewApproach_Click(object sender, EventArgs e)
         {
+            this.toolStripStatusLabel1.Visible = false;
             var newMission = new Mission();
             this.Missions.Add(newMission);
             var idx = this.listBox1.Items.Add(newMission);
@@ -122,6 +132,7 @@ namespace LandingChallengeCreator
 
         private void WriteCurrentApproach()
         {
+            this.toolStripStatusLabel1.Visible = false;
             if (this.listBox1.SelectedItem is Mission mission && this.IsInitialized)
             {
                 mission.Approach = this.txtName.Text;
@@ -220,6 +231,7 @@ namespace LandingChallengeCreator
 
         private void setPackageFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.toolStripStatusLabel1.Visible = false;
             this.folderBrowserDialog1.SelectedPath = Properties.Settings.Default.PackageFolder;
             var ret = this.folderBrowserDialog1.ShowDialog();
             if (ret == DialogResult.OK)
