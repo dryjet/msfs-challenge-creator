@@ -91,6 +91,7 @@ namespace LandingChallengeCreator
             Properties.Settings.Default.SelectedApproach = this.listBox1.SelectedIndex;
             Properties.Settings.Default.Approaches = JsonConvert.SerializeObject(this.Missions);
             Properties.Settings.Default.Save();
+            this.SetDirtyText(false);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +129,7 @@ namespace LandingChallengeCreator
             this.Missions.Add(newMission);
             var idx = this.listBox1.Items.Add(newMission);
             this.listBox1.SelectedIndex = idx;
+            this.SetDirtyText(true);
         }
 
         private void WriteCurrentApproach()
@@ -151,6 +153,7 @@ namespace LandingChallengeCreator
                 mission.Flaps = this.txtFlaps.Text;
 
                 this.listBox1.Items[this.listBox1.SelectedIndex] = this.listBox1.SelectedItem;
+                this.SetDirtyText(true);
             }
         }
 
@@ -291,6 +294,12 @@ namespace LandingChallengeCreator
                 "Generic",
                 "Weather.WPR"
             );
+        }
+
+        private void SetDirtyText(bool isDirty)
+        {
+            this.btnSave.Text = isDirty ? "Save changes *" : "Save changes";
+            this.Text = isDirty ? "Landing Challenge Creator *" : "Landing Challenge Creator";
         }
     }
 }

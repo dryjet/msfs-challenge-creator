@@ -480,6 +480,7 @@
             this.Controls.Add(this.btnDeploy);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Landing Challenge Creator";
