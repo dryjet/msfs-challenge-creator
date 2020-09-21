@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using NHotkey.WindowsForms;
 
 namespace LandingChallengeCreator
 {
@@ -62,6 +63,9 @@ namespace LandingChallengeCreator
             this.listBox1.SelectedIndex = Math.Min(Properties.Settings.Default.SelectedApproach, this.listBox1.Items.Count - 1);
             this.IsInitialized = true;
             this.toolStripStatusLabel1.Visible = false;
+
+            // Register hotkey
+            HotkeyManager.Current.AddOrReplace("SaveChanges", Keys.Control | Keys.S, (sender, args) => btnSave_Click(this, EventArgs.Empty));
         }
 
         private void btnDeploy_Click(object sender, EventArgs e)
