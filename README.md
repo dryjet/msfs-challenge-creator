@@ -6,6 +6,7 @@
 - In MSFS, select Landing Challenges, Famous, Generic Challenge to fly
 
 * Note: restarting from the menu after you landed will load the newly deployed approach, so you don't need to go back to main menu. This will not work if you use "ESC - Restart"
+* Disclaimer: use at your own risk! I am not responsible for breaking your sim!
 
 # Known issues
 - Occasionally the heading will not be interpreted correctly by MSFS (but is correctly set in the mission file)
