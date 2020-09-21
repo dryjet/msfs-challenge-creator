@@ -73,6 +73,13 @@ namespace LandingChallengeCreator
             var tpl = File.ReadAllText("Templates/Template.FLT", Encoding.GetEncoding(1252));
             if (this.listBox1.SelectedItem is Mission mission)
             {
+                if (string.IsNullOrWhiteSpace(mission.ICAO))
+                {
+                    this.toolStripStatusLabel1.Visible = true;
+                    this.toolStripStatusLabel1.Text = $"The approach {mission.Approach} could not be deployed (no ICAO set)!";
+                    return;
+                }
+
                 var flt = mission.Replace(tpl);
                 File.WriteAllText(this.GenericFilename, flt, Encoding.GetEncoding(1252));
 
@@ -281,7 +288,7 @@ namespace LandingChallengeCreator
             this.GenericFilename = Path.Combine(
                 Properties.Settings.Default.PackageFolder,
                 "Community",
-                "dryjet-landingchallenge-challenger",
+                "dryjet-landingchallenge-created",
                 "Missions",
                 "Asobo",
                 "LandingChallenges",
@@ -291,7 +298,7 @@ namespace LandingChallengeCreator
             this.WeatherFilename = Path.Combine(
                 Properties.Settings.Default.PackageFolder,
                 "Community",
-                "dryjet-landingchallenge-challenger",
+                "dryjet-landingchallenge-created",
                 "Missions",
                 "Asobo",
                 "LandingChallenges",
