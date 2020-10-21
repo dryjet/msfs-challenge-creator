@@ -415,7 +415,15 @@
             this.cmbAirplane.Items.AddRange(new object[] {
             "Airbus A320 Neo Asobo",
             "Boeing 747-8i Asobo",
-            "Bonanza G36 Asobo"});
+            "Bonanza G36 Asobo",
+            "Cessna Skyhawk G1000 Asobo",
+            "Asobo XCub",
+            "Asobo Savage Cub",
+            "Cessna 152 Asobo",
+            "TBM 930 Asobo",
+            "Cessna CJ4 Citation Asobo",
+            "Beechcraft King Air 350i Asobo",
+            "Cessna 208B Grand Caravan EX"});
             this.cmbAirplane.Location = new System.Drawing.Point(30, 19);
             this.cmbAirplane.Name = "cmbAirplane";
             this.cmbAirplane.Size = new System.Drawing.Size(446, 21);

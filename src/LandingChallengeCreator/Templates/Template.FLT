@@ -45,7 +45,7 @@ RunwayDesignator=${Mission.RunwayDesignator}
 
 [Briefing]
 BriefingText=TT:LC_GENERIC_BRIEFING
-BriefingImage0=./images/Funchal_Briefing.jpg
+BriefingImage0=./images/Generic_Briefing.jpg
 StartUpLocationInfo0=FLIGHT_INFO_RUNWAY_ARRIVAL_ELEVATION
 StartUpLocationInfo1=FLIGHT_INFO_RUNWAY_ARRIVAL_SLOPE
 StartUpLocationInfo2=FLIGHT_INFO_LOCATION_TIME
@@ -55,7 +55,7 @@ StartUpAircraftInfo1=FLIGHT_INFO_AIRCRAFT_HEADING
 StartUpAircraftInfo2=FLIGHT_INFO_AIRCRAFT_STALL_SPEED_FLAPS_UP
 
 [Loading]
-ImageName=./images/Funchal_Loading.jpg
+ImageName=./images/Generic_Loading.jpg
 Tips0=TT:LOADING.SPECIFIC_TIPS.LANDING_PRECISION
 Tips1=TT:LOADING.SPECIFIC_TIPS.CENTERLINE
 Tips2=TT:LOADING.SPECIFIC_TIPS.LANDING_SMOOTHNESS
@@ -117,14 +117,13 @@ description=Madeira, Portugal to Madeira Airport
 type=VFR
 routetype=0
 cruising_altitude=0
-departure_id=CUST0, N32° 35' 1.60", W16° 48' 25.80", +002082.50
+departure_id=CUST0, ${Mission.Latitude}, ${Mission.Longitude}, ${Mission.Altitude}
 departure_position=
-destination_id=LPMA, N32° 41.87', W16° 46.47', +000168.50
+destination_id=EDDL, ${Mission.Latitude}, ${Mission.Longitude}, ${Mission.Altitude}
 departure_name=Paro, Bhutan
 destination_name=Paro Airport
-waypoint.0=, , , CUST0, U, N32° 35' 1.60", W16° 48' 25.80", +002082.50,
-waypoint.1=, , , CUST1, U, N32° 35' 32.06", W16° 48' 28.53", +002082.50,
-waypoint.2=, LPMA, , LPMA, A, N32° 41.87', W16° 46.47', +000168.50,
+waypoint.0=, , , CUST0, U, ${Mission.Latitude}, ${Mission.Longitude}, ${Mission.Altitude}
+waypoint.1=, EDDL, , EDDL, A, ${Mission.Latitude}, ${Mission.Longitude}, ${Mission.Altitude}
 
 [ATC_AircraftManager]
 NumberofAircraft=1
