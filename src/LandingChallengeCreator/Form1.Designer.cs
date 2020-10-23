@@ -67,6 +67,8 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cmbWeatherTemplate = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numWindFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWindKnots)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -357,6 +359,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.cmbWeatherTemplate);
             this.groupBox3.Controls.Add(this.numWindKnots);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.numWindFrom);
@@ -473,6 +477,28 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // cmbWeatherTemplate
+            // 
+            this.cmbWeatherTemplate.FormattingEnabled = true;
+            this.cmbWeatherTemplate.Items.AddRange(new object[] {
+            "ClearSky",
+            "Overcast",
+            "Scattered"});
+            this.cmbWeatherTemplate.Location = new System.Drawing.Point(316, 50);
+            this.cmbWeatherTemplate.Name = "cmbWeatherTemplate";
+            this.cmbWeatherTemplate.Size = new System.Drawing.Size(157, 21);
+            this.cmbWeatherTemplate.TabIndex = 9;
+            this.cmbWeatherTemplate.Validated += new System.EventHandler(this.cmbWeatherTemplate_Validated);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(369, 34);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Template";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,6 +578,8 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbWeatherTemplate;
     }
 }
 

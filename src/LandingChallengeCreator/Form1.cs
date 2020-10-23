@@ -60,6 +60,7 @@ namespace LandingChallengeCreator
             }
 
             // Set the selected index
+            this.cmbWeatherTemplate.SelectedIndex = 0;
             this.listBox1.SelectedIndex = Math.Min(Properties.Settings.Default.SelectedApproach, this.listBox1.Items.Count - 1);
             this.IsInitialized = true;
             this.toolStripStatusLabel1.Visible = false;
@@ -83,7 +84,11 @@ namespace LandingChallengeCreator
                 var flt = mission.Replace(tpl);
                 File.WriteAllText(this.GenericFilename, flt, Encoding.GetEncoding(1252));
 
-                var weather = File.ReadAllText("Templates/Weather.WPR", Encoding.GetEncoding(1252));
+                var weatherTemplate = "ClearSky";
+                if (File.Exists($"Templates/{this.cmbWeatherTemplate.Text}.WPR"))
+                    weatherTemplate = this.cmbWeatherTemplate.Text;
+
+                var weather = File.ReadAllText($"Templates/{weatherTemplate}.WPR", Encoding.GetEncoding(1252));
                 weather = weather.Replace("${dir}", this.numWindFrom.Value.ToString());
                 weather = weather.Replace("${speed}", this.numWindKnots.Value.ToString());
                 File.WriteAllText(this.WeatherFilename, weather, Encoding.GetEncoding(1252));
@@ -126,6 +131,7 @@ namespace LandingChallengeCreator
                 this.numWindFrom.Value = mission.WindDirection;
                 this.numWindKnots.Value = mission.WindSpeed;
                 this.txtAirspeed.Text = mission.Airspeed;
+                this.cmbWeatherTemplate.Text = mission.WeatherTemplate;
                 this.cmbAirplane.Text = mission.Plane;
                 this.dtFlight.Value = mission.DateOfFlight;
                 this.txtFlaps.Text = mission.Flaps;
@@ -159,6 +165,7 @@ namespace LandingChallengeCreator
                 mission.WindDirection = (int)this.numWindFrom.Value;
                 mission.WindSpeed = (int)this.numWindKnots.Value;
                 mission.Airspeed = this.txtAirspeed.Text;
+                mission.WeatherTemplate = this.cmbWeatherTemplate.Text;
                 mission.Plane = this.cmbAirplane.Text;
                 mission.DateOfFlight = this.dtFlight.Value;
                 mission.Flaps = this.txtFlaps.Text;
@@ -239,6 +246,11 @@ namespace LandingChallengeCreator
         }
 
         private void numWindKnots_Validated(object sender, EventArgs e)
+        {
+            this.WriteCurrentApproach();
+        }
+
+        private void cmbWeatherTemplate_Validated(object sender, EventArgs e)
         {
             this.WriteCurrentApproach();
         }

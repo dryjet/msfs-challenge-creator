@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="WeatherPreset" version="1,3">
+  <Descr>AceXML Document</Descr>
+  <WeatherPreset.Preset>
+    <Name>TT:MENU.WEATHERTYPE_3FEW_CLOUDS</Name>
+    <LayeredImage>weather/Presets/scattered_clouds_layer.png</LayeredImage>
+    <Icon>weather/Presets/scattered_clouds.svg</Icon>
+    <IsAltitudeAMGL>False</IsAltitudeAMGL>
+    <AerosolDensity Value="2.000" Unit="density factor"></AerosolDensity>
+    <Precipitations Value="0.000" Unit="mm/h"></Precipitations>
+    <SnowCover Value="0.500" Unit="m"></SnowCover>
+    <CloudLayer>
+      <CloudLayerDensity Value="0.150" Unit="(0 - 1)"></CloudLayerDensity>
+      <CloudLayerAltitudeBot Value="3000" Unit="m"></CloudLayerAltitudeBot>
+      <CloudLayerAltitudeTop Value="4500" Unit="m"></CloudLayerAltitudeTop>
+      <CloudLayerScattering Value="0.500" Unit="(0 - 1)"></CloudLayerScattering>
+    </CloudLayer>
+    <CloudLayer>
+      <CloudLayerDensity Value="0.100" Unit="(0 - 1)"></CloudLayerDensity>
+      <CloudLayerAltitudeBot Value="8000" Unit="m"></CloudLayerAltitudeBot>
+      <CloudLayerAltitudeTop Value="9000" Unit="m"></CloudLayerAltitudeTop>
+    </CloudLayer>
+    <CloudLayer>
+      <CloudLayerDensity Value="0.000" Unit="(0 - 1)"></CloudLayerDensity>
+      <CloudLayerAltitudeBot Value="10000" Unit="m"></CloudLayerAltitudeBot>
+      <CloudLayerAltitudeTop Value="10100" Unit="m"></CloudLayerAltitudeTop>
+    </CloudLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="5" Unit="m"></WindLayerAltitude>
+      <WindLayerAngle Value="${dir}" Unit="degrees"></WindLayerAngle>
+      <WindLayerSpeed Value="${speed}" Unit="knts"></WindLayerSpeed>
+    </WindLayer>
+  </WeatherPreset.Preset>
+</SimBase.Document>

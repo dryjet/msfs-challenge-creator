@@ -16,6 +16,7 @@ namespace LandingChallengeCreator
         public string Altitude { get; set; } = "+05000.00";
         public string Heading { get; set; } = "111";
         public string Airspeed { get; set; } = "145";
+        public string WeatherTemplate { get; set; } = "ClearSky";
         public string Flaps { get; set; } = "100";
         public int WindDirection { get; set; } = 120;
         public int WindSpeed { get; set; } = 5;
